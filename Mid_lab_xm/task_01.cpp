@@ -22,4 +22,3 @@ int main() {
     cout << "Palindrome" << endl;
     return 0; // Exit indicating a palindrome
 }
-5
