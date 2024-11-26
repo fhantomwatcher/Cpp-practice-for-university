@@ -12,19 +12,14 @@ int main() {
         cin >> arr[i];
     }
 
-    bool isPalindrome = true;
     for (int i = 0; i < n / 2; i++) {
         if (arr[i] != arr[n - i - 1]) {
-            isPalindrome = false;
-            break;
+            cout << "Not a Palindrome" << endl;
+            return 0; // Exit if a mismatch is found
         }
     }
 
-    if (isPalindrome) {
-        cout << "Palindrome" << endl;
-    } else {
-        cout << "Not a Palindrome" << endl;
-    }
-
-    return 0;
+    cout << "Palindrome" << endl;
+    return 0; // Exit indicating a palindrome
 }
+5
