@@ -8,7 +8,13 @@ int main() {
     cout<<"enter n : ";
     cin>>n;
 
-    int dataA[n][n], dataB[n][n], result[n][n] = {0};
+    int dataA[n][n], dataB[n][n], result[n][n];
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            result[i][j]=0;
+        }
+    }
 
     cout<<"enter the values of mattric A"<<endl;
     for(int i=0;i<n;i++){
@@ -41,7 +47,7 @@ cout<<endl;
     }
 
     cout<<endl;
-
+//calculation logic.
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             for(int k=0; k<n; k++){
@@ -49,7 +55,7 @@ cout<<endl;
             }
         }
     }
-
+    cout<<"results of maltipication: "<<endl;
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             cout<< result[i][j]<<" ";
