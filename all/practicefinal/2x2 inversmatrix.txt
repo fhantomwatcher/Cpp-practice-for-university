@@ -1,0 +1,45 @@
+#include <iostream>
+
+void calculateInverse(const double matrix[2][2], double inverse[2][2], double determinant) {
+    // Calculate the inverse matrix
+    inverse[0][0] =  matrix[1][1] / determinant;
+    inverse[0][1] = -matrix[0][1] / determinant;
+    inverse[1][0] = -matrix[1][0] / determinant;
+    inverse[1][1] =  matrix[0][0] / determinant;
+}
+
+int main() {
+    double matrix[2][2];
+    double inverse[2][2];
+    double determinant;
+
+    std::cout << "Enter the elements of a 2x2 matrix (row by row):\n";
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            std::cin >> matrix[i][j];
+        }
+    }
+
+    // Calculate the determinant
+    determinant = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+    // Check if the determinant is zero
+    if (determinant == 0) {
+        std::cout << "The matrix is singular and does not have an inverse.\n";
+        return 0; // Exit the program
+    }
+
+    // Calculate the inverse
+    calculateInverse(matrix, inverse, determinant);
+
+    // Output the inverse matrix
+    std::cout << "The inverse of the matrix is:\n";
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 2; ++j) {
+            std::cout << inverse[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
+
+    return 0;
+}
